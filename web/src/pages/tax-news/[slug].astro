@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { featuredNews, site } from '../../data/site';
+
+export function getStaticPaths() {
+  return featuredNews.map((a) => ({ params: { slug: a.slug }, props: { article: a } }));
+}
+
+const { article } = Astro.props;
+---
+
+<BaseLayout
+  title={`${article.title} | ${site.name}`}
+  description={article.excerpt}
+  breadcrumb={[
+    { name: '首頁', url: site.url },
+    { name: '稅務新聞', url: `${site.url}/tax-news/` },
+    { name: article.title, url: `${site.url}/tax-news/${article.slug}/` },
+  ]}
+>
+  <article class="max-w-[780px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <nav class="text-xs text-[color:var(--color-text-muted)] mb-8">
+      <a href="/" class="hover:text-[color:var(--color-ink)]">首頁</a> /
+      <a href="/tax-news/" class="hover:text-[color:var(--color-ink)]">稅務新聞</a> /
+      <span class="text-[color:var(--color-ink)]">{article.title}</span>
+    </nav>
+
+    <span class="text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold">
+      {article.category}
+    </span>
+    <h1 class="mt-4 text-4xl md:text-5xl font-black text-[color:var(--color-ink)] tracking-tight leading-[1.15]">
+      {article.title}
+    </h1>
+    <time class="block mt-6 font-tabular text-sm text-[color:var(--color-text-muted)]">
+      {article.date}
+    </time>
+
+    <hr class="hairline mt-12" />
+
+    <p class="mt-12 text-lg text-[color:var(--color-ink)] leading-[1.85] font-medium">
+      {article.excerpt}
+    </p>
+
+    <p class="mt-6 text-[color:var(--color-text-muted)] leading-[1.85]">
+      此為文章骨架。後續將以 MDX 或 CMS 內容管理,填入完整分析、法條引用、相關 FAQ 及 Article schema。
+    </p>
+  </article>
+</BaseLayout>

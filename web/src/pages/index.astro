@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import ServiceCards from '../components/home/ServiceCards.astro';
+import WhyUs from '../components/home/WhyUs.astro';
+import TaxNews from '../components/home/TaxNews.astro';
+import FaqSection from '../components/home/FaqSection.astro';
+import ContactCTA from '../components/home/ContactCTA.astro';
+import { featuredFaq, site } from '../data/site';
+---
+
+<BaseLayout
+  title={`${site.tagline} | ${site.name}`}
+  description="奇承聯合會計師事務所位於台中北屯,提供中小企業記帳、營業稅/所得稅申報、財務簽證、工商登記等一站式會計稅務服務。服務 20+ 年,500+ 家企業信賴。"
+  faq={[...featuredFaq]}
+>
+  <Hero />
+  <ServiceCards />
+  <WhyUs />
+  <TaxNews />
+  <FaqSection />
+  <ContactCTA />
+</BaseLayout>

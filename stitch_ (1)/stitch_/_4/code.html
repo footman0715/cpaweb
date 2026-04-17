@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#31302d",
+                    "surface-bright": "#fcf9f4",
+                    "secondary-container": "#ffdc8e",
+                    "on-secondary-fixed": "#251a00",
+                    "on-background": "#1c1c19",
+                    "on-tertiary-fixed": "#291800",
+                    "on-primary-fixed-variant": "#314c40",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "secondary": "#745b1b",
+                    "surface-container": "#f0ede9",
+                    "surface": "#fcf9f4",
+                    "surface-container-low": "#f6f3ee",
+                    "tertiary-fixed": "#ffddb4",
+                    "surface-container-highest": "#e5e2dd",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1f3a2e",
+                    "primary": "#082419",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1c1c19",
+                    "on-secondary-container": "#795f1f",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f3f0eb",
+                    "primary-fixed": "#cbead8",
+                    "on-tertiary-container": "#d78e00",
+                    "on-surface-variant": "#424844",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#4b2f00",
+                    "outline": "#727974",
+                    "tertiary-fixed-dim": "#ffb955",
+                    "secondary-fixed": "#ffdf9b",
+                    "secondary-fixed-dim": "#e4c278",
+                    "outline-variant": "#c2c8c2",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#5a4302",
+                    "primary-fixed-dim": "#afcebd",
+                    "surface-container-high": "#ebe8e3",
+                    "surface-variant": "#e5e2dd",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#042016",
+                    "on-primary-container": "#86a494",
+                    "surface-dim": "#dcdad5",
+                    "tertiary": "#2f1c00",
+                    "surface-tint": "#486457",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#afcebd",
+                    "background": "#fcf9f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Sans TC", "sans-serif"],
+                    "body": ["Inter", "Noto Sans TC", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f4;
+            color: #1c1c19;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 12px 32px rgba(31, 58, 46, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f4]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#082419] dark:text-[#fcf9f4] text-2xl">account_balance</span>
+<h1 class="font-['Noto_Sans_TC'] font-bold tracking-tight text-2xl font-black text-[#082419] dark:text-[#fcf9f4] uppercase">Cicpafirm</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Noto_Sans_TC'] text-sm font-bold">
+<a class="text-[#082419]/70 dark:text-[#fcf9f4]/70 hover:text-[#082419] dark:hover:text-white transition-colors" href="#">關於我們</a>
+<a class="text-[#082419]/70 dark:text-[#fcf9f4]/70 hover:text-[#082419] dark:hover:text-white transition-colors" href="#">服務項目</a>
+<a class="text-[#082419] dark:text-white border-b-2 border-[#F5A623] pb-1" href="#">常見問題</a>
+<a class="text-[#082419]/70 dark:text-[#fcf9f4]/70 hover:text-[#082419] dark:hover:text-white transition-colors" href="#">聯繫我們</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 text-sm font-bold tracking-wider hover:opacity-80 transition-opacity active:scale-95 duration-200 ease-in-out">
+                Member Login
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-24">
+<!-- Hero Section & Search -->
+<section class="max-w-7xl mx-auto px-8 mb-20">
+<div class="md:grid md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-8">
+<div class="inline-block border border-secondary px-3 py-1 mb-6">
+<span class="font-label text-xs font-bold text-secondary tracking-widest uppercase">Support Center</span>
+</div>
+<h2 class="text-[3.5rem] leading-[1.1] font-headline font-black text-primary mb-8 max-w-2xl">
+                        常見問題與<br/>財務指引
+                    </h2>
+<p class="text-on-surface-variant max-w-lg text-lg leading-relaxed mb-12">
+                        我們在此解答關於稅務、審計及 AEO 認證的各項細節。透過精確的專業見解，為您的企業決策提供穩固基石。
+                    </p>
+</div>
+<div class="md:col-span-4 hidden md:block">
+<div class="aspect-square bg-surface-container-low relative overflow-hidden group">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" data-alt="abstract architectural close-up of financial building with clean lines and soft shadows on warm textured paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg7GlkxevIwYwPvVQAkJ9hnvFC5ww_DQtPv4alQTZJkBfTbla8c6wh4H9eU3g2vT3zPcLzsXV2LQIW_4iAQJtIz7yHp6kMhd23YwvuQGoL2Uxy-pTHk1-C0uyTBt2cXjTQjjc8uS1oCFaC8R-QKBdpOkek2W_kYwbrzsH86f_hvVk4vHaGa-7Gt3Sqndphe13P03nP4X0SQvxA_KEoRVA4IK_OIVfmGQyfsR2F84mdrIoTPGbnqz4dtisojhG-SDXyooDbVgJQS5rs"/>
+</div>
+</div>
+</div>
+<!-- Search Bar Component -->
+<div class="mt-12 max-w-3xl">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-secondary transition-colors py-6 pl-14 pr-8 text-xl font-body outline-none" placeholder="搜尋問題關鍵字，例如：AEO 認證、稅務規劃..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Category Filters -->
+<section class="max-w-7xl mx-auto px-8 mb-16">
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 border-2 border-primary bg-primary text-on-primary text-sm font-bold transition-all">全部類別</button>
+<button class="px-6 py-2 border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary text-sm font-bold transition-all">AEO 安全認證</button>
+<button class="px-6 py-2 border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary text-sm font-bold transition-all">稅務與審計</button>
+<button class="px-6 py-2 border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary text-sm font-bold transition-all">企業諮詢</button>
+<button class="px-6 py-2 border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary text-sm font-bold transition-all">法規遵循</button>
+</div>
+</section>
+<!-- FAQ Content Grid (Asymmetric) -->
+<section class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left Column: Featured AEO Section -->
+<div class="lg:col-span-4">
+<div class="sticky top-32">
+<div class="p-8 bg-primary-container text-on-primary-container">
+<h3 class="text-xl font-headline font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container" data-weight="fill">verified_user</span>
+                            AEO 認證基石
+                        </h3>
+<p class="text-on-primary-container/80 text-sm leading-relaxed mb-8">
+                            優質企業 (Authorized Economic Operator) 認證是國際貿易的安全通行證。我們提供從準備到核准的全程輔導。
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-container text-sm mt-1">check_circle</span>
+<span class="text-sm font-medium">通關自動化優勢</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-container text-sm mt-1">check_circle</span>
+<span class="text-sm font-medium">降低抽驗比率</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-container text-sm mt-1">check_circle</span>
+<span class="text-sm font-medium">國際相互承認協議 (MRA)</span>
+</li>
+</ul>
+</div>
+<div class="mt-8">
+<img class="w-full aspect-[4/3] object-cover grayscale brightness-90" data-alt="high-end editorial office interior with clean lines, professional atmosphere, and soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0drh7gNQGlD_8zQ_aPj1eJ1PMNIzAPxx1Kqhz5xB-J_MBQudldrhKn5s4aDLx9GOG_QPUWY5ANydUFOtIxxWnimCyAgfOs7Bz9RU8Dw2lxPwA-IC5HW1taz4P5TPIrF0115X-Iw-9UCaw9Icn_bCizCbcp9KB-3xhB7dqG7MfOF-0BuniaxPfAflxkhVKcC1puPZmCvVduJByFG_JEBaLO4AXNzSXkpFaQX5bwwcJhIj1qu7-XvzD6WtkrwcnL0rweSWPK2geTjID"/>
+</div>
+</div>
+</div>
+<!-- Right Column: FAQ Accordion -->
+<div class="lg:col-span-8">
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-lowest editorial-shadow overflow-hidden group">
+<div class="p-6 md:p-8 flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="text-outline-variant font-bold text-2xl font-body">01</span>
+<h4 class="text-xl font-headline font-bold text-primary">申請 AEO 認證的基本門檻為何？</h4>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">add</span>
+</div>
+<div class="px-6 md:px-8 pb-8 pl-20 max-w-2xl">
+<p class="text-on-surface-variant leading-relaxed">
+                                申請企業需具備實體安全、健全的財務狀況（過去三年無欠稅紀錄）、以及完善的貨物進出口控管流程。具體細節需依企業規模與營運形態進行初步評估，我們的團隊將協助您完成首波審查。
+                            </p>
+<div class="mt-4 border-l-2 border-secondary pl-4 py-1">
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">Expert Advice</span>
+</div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container-low overflow-hidden group">
+<div class="p-6 md:p-8 flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="text-outline-variant font-bold text-2xl font-body">02</span>
+<h4 class="text-xl font-headline font-bold text-primary">稅務規劃如何提升企業營運效率？</h4>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">add</span>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-low overflow-hidden group">
+<div class="p-6 md:p-8 flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="text-outline-variant font-bold text-2xl font-body">03</span>
+<h4 class="text-xl font-headline font-bold text-primary">年度審計流程通常需要多長時間？</h4>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">add</span>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="bg-surface-container-lowest editorial-shadow overflow-hidden group">
+<div class="p-6 md:p-8 flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="text-outline-variant font-bold text-2xl font-body">04</span>
+<h4 class="text-xl font-headline font-bold text-primary">企業遭稅務機關查核時，貴所如何協助？</h4>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">add</span>
+</div>
+<div class="px-6 md:px-8 pb-8 pl-20 max-w-2xl">
+<p class="text-on-surface-variant leading-relaxed">
+                                我們提供全方位的稅務訴訟與協調服務。從文件彙整、法條引用到與查核官員進行專業溝通，我們確保您的合法權益獲得最大程度的保護，並將查核風險降至最低。
+                            </p>
+</div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="bg-surface-container-low overflow-hidden group">
+<div class="p-6 md:p-8 flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="text-outline-variant font-bold text-2xl font-body">05</span>
+<h4 class="text-xl font-headline font-bold text-primary">跨境貿易中的移轉訂價政策？</h4>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">add</span>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-12 flex justify-center">
+<button class="group flex items-center gap-4 text-primary font-bold hover:gap-6 transition-all">
+<span class="tracking-widest uppercase text-xs">Load More Topics</span>
+<span class="h-[1px] w-12 bg-primary"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-8 mt-32">
+<div class="bg-[#1f3a2e] relative p-12 md:p-20 overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-gradient-to-br from-[#1F3A2E] to-[#082419]"></div>
+<div class="relative z-10 max-w-2xl">
+<h3 class="text-3xl md:text-4xl font-headline font-black text-surface mb-6 leading-tight">仍有疑問？<br/>與我們的專業會計師預約諮詢。</h3>
+<p class="text-surface/70 mb-10 text-lg">精確的財務建議始於深度的專業溝通。</p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-[#F5A623] text-primary px-8 py-4 font-bold tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                            預約初步評估 <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="border border-surface/30 text-surface px-8 py-4 font-bold tracking-wider hover:bg-surface/10 transition-all">
+                            聯絡我們
+                        </button>
+</div>
+</div>
+<div class="absolute right-[-10%] top-[-10%] hidden lg:block opacity-20">
+<span class="material-symbols-outlined text-[300px] text-surface select-none">account_balance_wallet</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1F3A2E] dark:bg-black w-full py-16 px-8 border-t border-[#082419]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="col-span-1">
+<div class="text-xl font-bold text-[#fcf9f4] mb-6 font-['Inter']">Cicpafirm</div>
+<p class="text-[#fcf9f4]/60 text-sm leading-relaxed font-['Inter']">
+                    專業、誠信、精準。我們是您在全球化商業浪潮中的堅實後盾。
+                </p>
+</div>
+<div>
+<h5 class="text-[#fcf9f4] font-bold mb-6 text-sm tracking-widest uppercase">導覽</h5>
+<ul class="space-y-4">
+<li><a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors text-sm font-['Inter'] tracking-wide" href="#">關於我們</a></li>
+<li><a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors text-sm font-['Inter'] tracking-wide" href="#">服務項目</a></li>
+<li><a class="text-[#F5A623] text-sm font-['Inter'] tracking-wide" href="#">常見問題</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[#fcf9f4] font-bold mb-6 text-sm tracking-widest uppercase">法律</h5>
+<ul class="space-y-4">
+<li><a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors text-sm font-['Inter'] tracking-wide" href="#">法律條款</a></li>
+<li><a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors text-sm font-['Inter'] tracking-wide" href="#">隱私政策</a></li>
+<li><a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors text-sm font-['Inter'] tracking-wide" href="#">聯繫我們</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[#fcf9f4] font-bold mb-6 text-sm tracking-widest uppercase">聯絡資訊</h5>
+<p class="text-[#fcf9f4]/60 text-sm font-['Inter'] mb-2">臺北市中正區信義路二段</p>
+<p class="text-[#fcf9f4]/60 text-sm font-['Inter']">contact@cicpafirm.tw</p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[#fcf9f4]/40 text-xs font-['Inter'] tracking-wide">
+                © 2024 Cicpafirm. All rights reserved. Precision in Finance.
+            </p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#fcf9f4]/40 text-xl cursor-pointer hover:text-[#F5A623] transition-colors">public</span>
+<span class="material-symbols-outlined text-[#fcf9f4]/40 text-xl cursor-pointer hover:text-[#F5A623] transition-colors">mail</span>
+</div>
+</div>
+</footer>
+</body></html>

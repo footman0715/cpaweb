@@ -1,0 +1,54 @@
+---
+import { featuredNews } from '../../data/site';
+---
+
+<section class="bg-[color:var(--color-canvas-dim)] py-24 lg:py-32">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="flex items-end justify-between flex-wrap gap-4 mb-12">
+      <div>
+        <p class="eyebrow mb-4">INSIGHTS · 稅務新聞</p>
+        <h2 class="text-4xl md:text-5xl font-black text-[color:var(--color-ink)] tracking-tight">
+          最新稅務新聞
+        </h2>
+      </div>
+      <a
+        href="/tax-news/"
+        class="text-sm text-[color:var(--color-ink)] hover:text-[color:var(--color-ink-deep)]"
+      >
+        查看全部 →
+      </a>
+    </div>
+
+    <ul class="border-t border-[color:var(--color-hairline)]">
+      {featuredNews.map((article) => (
+        <li class="border-b border-[color:var(--color-hairline)]">
+          <a
+            href={`/tax-news/${article.slug}/`}
+            class="group grid grid-cols-1 md:grid-cols-[140px_1fr_40px] gap-6 py-8 items-start hover:bg-[color:var(--color-canvas)]/50 transition-colors px-4 -mx-4"
+          >
+            <div class="flex flex-col gap-2">
+              <time class="font-tabular text-sm text-[color:var(--color-ink)]">
+                {article.date}
+              </time>
+              <span class="text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-gold)] font-semibold">
+                {article.category}
+              </span>
+            </div>
+            <div>
+              <h3 class="text-xl md:text-2xl font-bold text-[color:var(--color-ink)] tracking-tight leading-snug group-hover:text-[color:var(--color-ink-deep)]">
+                {article.title}
+              </h3>
+              <p class="mt-3 text-sm text-[color:var(--color-text-muted)] leading-relaxed line-clamp-2">
+                {article.excerpt}
+              </p>
+            </div>
+            <span
+              class="text-xl text-[color:var(--color-ink)] transition-transform group-hover:translate-x-1 hidden md:inline"
+              aria-hidden="true"
+            >→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

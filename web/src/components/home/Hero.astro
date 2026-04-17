@@ -1,0 +1,72 @@
+---
+import { site } from '../../data/site';
+
+const stats = [
+  { value: '20+', label: '年服務經驗' },
+  { value: '500+', label: '企業客戶' },
+  { value: '4', label: '位執業會計師' },
+];
+---
+
+<section class="relative overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-20 pb-32 lg:pt-28 lg:pb-40">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-9">
+        <p class="eyebrow mb-8">CICPAFIRM · 台中 · EST. {site.founded}</p>
+
+        <h1 class="text-[48px] md:text-[72px] lg:text-[88px] leading-[1.05] font-black text-[color:var(--color-ink)] tracking-tight">
+          台中中小企業<br />
+          <span class="relative inline-block">
+            信賴
+            <span class="absolute left-0 right-0 -bottom-1 h-[2px] bg-[color:var(--color-gold)]" aria-hidden="true"></span>
+          </span>的會計師事務所
+        </h1>
+
+        <p class="mt-8 text-lg md:text-xl text-[color:var(--color-text-muted)] max-w-[680px] leading-relaxed">
+          {site.subtagline}
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-2 bg-[color:var(--color-signal)] text-[color:var(--color-ink-deep)] font-bold px-7 py-3.5 rounded-[6px] hover:opacity-90 transition-opacity"
+          >
+            免費諮詢 <span aria-hidden="true">→</span>
+          </a>
+          <a
+            href="/services/"
+            class="inline-flex items-center gap-2 border border-[color:var(--color-ink)] text-[color:var(--color-ink)] font-medium px-7 py-3.5 rounded-[6px] hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-canvas)] transition-colors"
+          >
+            查看服務項目
+          </a>
+        </div>
+
+        <hr class="hairline mt-16 max-w-[680px]" />
+
+        <dl class="mt-10 grid grid-cols-3 gap-8 max-w-[680px]">
+          {stats.map((s) => (
+            <div>
+              <dt class="sr-only">{s.label}</dt>
+              <dd class="font-tabular text-4xl md:text-5xl font-black text-[color:var(--color-ink)]">
+                {s.value}
+              </dd>
+              <p class="mt-2 text-sm text-[color:var(--color-text-muted)]">{s.label}</p>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div class="hidden lg:flex col-span-3 justify-end items-start pt-8">
+        <div class="relative h-[360px] pr-2">
+          <div class="absolute top-0 right-0 h-full w-px bg-[color:var(--color-hairline)]"></div>
+          <span
+            class="absolute top-1/2 right-6 text-[11px] tracking-[0.3em] text-[color:var(--color-text-muted)] whitespace-nowrap origin-center"
+            style="transform: translateY(-50%) rotate(-90deg);"
+          >
+            CERTIFIED PUBLIC ACCOUNTANTS · TAICHUNG
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

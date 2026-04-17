@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#31302d",
+                    "surface-bright": "#fcf9f4",
+                    "secondary-container": "#ffdc8e",
+                    "on-secondary-fixed": "#251a00",
+                    "on-background": "#1c1c19",
+                    "on-tertiary-fixed": "#291800",
+                    "on-primary-fixed-variant": "#314c40",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "secondary": "#745b1b",
+                    "surface-container": "#f0ede9",
+                    "surface": "#fcf9f4",
+                    "surface-container-low": "#f6f3ee",
+                    "tertiary-fixed": "#ffddb4",
+                    "surface-container-highest": "#e5e2dd",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1f3a2e",
+                    "primary": "#082419",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1c1c19",
+                    "on-secondary-container": "#795f1f",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f3f0eb",
+                    "primary-fixed": "#cbead8",
+                    "on-tertiary-container": "#d78e00",
+                    "on-surface-variant": "#424844",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#4b2f00",
+                    "outline": "#727974",
+                    "tertiary-fixed-dim": "#ffb955",
+                    "secondary-fixed": "#ffdf9b",
+                    "secondary-fixed-dim": "#e4c278",
+                    "outline-variant": "#c2c8c2",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#5a4302",
+                    "primary-fixed-dim": "#afcebd",
+                    "surface-container-high": "#ebe8e3",
+                    "surface-variant": "#e5e2dd",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#042016",
+                    "on-primary-container": "#86a494",
+                    "surface-dim": "#dcdad5",
+                    "tertiary": "#2f1c00",
+                    "surface-tint": "#486457",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#afcebd",
+                    "background": "#fcf9f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Sans TC", "Inter", "sans-serif"],
+                    "body": ["Inter", "Noto Sans TC", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-inset {
+            margin-right: 30%;
+        }
+        @media (max-width: 768px) {
+            .editorial-inset {
+                margin-right: 0;
+            }
+        }
+        .ink-gradient {
+            background: linear-gradient(15deg, #1F3A2E 0%, #082419 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f4]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="account_balance">account_balance</span>
+<span class="text-2xl font-black text-[#082419] uppercase font-['Noto_Sans_TC'] tracking-tight">Cicpafirm</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Noto_Sans_TC'] font-bold tracking-tight">
+<a class="text-[#082419]/70 hover:text-[#082419] transition-colors" href="#">首頁</a>
+<a class="text-[#082419] border-b-2 border-[#F5A623] pb-1" href="#">服務項目</a>
+<a class="text-[#082419]/70 hover:text-[#082419] transition-colors" href="#">專業團隊</a>
+<a class="text-[#082419]/70 hover:text-[#082419] transition-colors" href="#">知識中心</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold hover:opacity-80 transition-opacity active:scale-95 duration-200 ease-in-out">
+                Member Login
+            </button>
+</div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="px-8 py-20 md:py-32 bg-surface">
+<div class="max-w-7xl mx-auto editorial-inset">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-12 h-[1px] bg-secondary"></div>
+<span class="text-secondary font-bold tracking-widest text-sm uppercase">專業服務 / ACCOUNTING &amp; TAX</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-black text-primary leading-[1.1] mb-8 font-headline">
+                    會計與稅務服務<br/>
+<span class="text-on-primary-container">精確至上的財務基石</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed max-w-2xl font-light">
+                    我們不只是數字的記錄者，更是您商業成長的沈默夥伴。透過嚴謹的帳務處理與前瞻性的稅務規劃，為您的企業打造堅實的法律合規與財務效率。
+                </p>
+</div>
+</section>
+<!-- Service Scope - Bento Grid -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-3xl font-bold text-primary font-headline mb-2">服務範疇</h2>
+<div class="w-12 h-[1px] bg-secondary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Feature 1 -->
+<div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-lg shadow-sm border-l-4 border-primary">
+<div class="flex flex-col h-full justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="description">description</span>
+<h3 class="text-2xl font-bold mb-4 font-headline text-primary">代理記帳與財務報表</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                                    提供完整且及時的會計帳務處理，包括憑證審核、分類帳登錄及定期編製損益表與資產負債表。我們確保每一筆交易都符合台灣最新會計準則（EAS/IFRSs）。
+                                </p>
+</div>
+<ul class="mt-8 grid grid-cols-2 gap-4 text-sm font-medium text-on-surface">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> 雙週帳務更新</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> 電子化憑證管理</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> 季末經營分析報告</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> 專屬會計秘書對接</li>
+</ul>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-4 bg-primary-container text-on-primary p-10 rounded-lg ink-gradient">
+<span class="material-symbols-outlined text-4xl text-secondary-container mb-6" data-icon="assignment_turned_in">assignment_turned_in</span>
+<h3 class="text-2xl font-bold mb-4 font-headline">稅務合規申報</h3>
+<p class="text-on-primary-container leading-relaxed">
+                            從每兩個月一次的營業稅申報，到年度營所稅結算與各類所得扣繳，我們精確掌握每個關鍵時點，杜絕滯報金與漏稅風險。
+                        </p>
+</div>
+<!-- Feature 3 -->
+<div class="md:col-span-4 bg-surface-container-highest p-10 rounded-lg">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="insights">insights</span>
+<h3 class="text-2xl font-bold mb-4 font-headline text-primary">稅務優化建議</h3>
+<p class="text-on-surface-variant">
+                            協助企業分析各項租稅優惠法規，合法降低稅務負擔，提升資金周轉率。
+                        </p>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-lg relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-2xl font-bold mb-4 font-headline text-primary">適合對象</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
+<div class="flex flex-col gap-2">
+<span class="text-4xl font-black text-secondary-container">01</span>
+<p class="font-bold">新創與中小企業</p>
+<p class="text-xs text-on-surface-variant">專注業務核心，將繁雜帳務交由專業團隊託管。</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-4xl font-black text-secondary-container">02</span>
+<p class="font-bold">外資與在台分支</p>
+<p class="text-xs text-on-surface-variant">跨國合規專家，處理複雜的國際稅務與資本對接。</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-4xl font-black text-secondary-container">03</span>
+<p class="font-bold">高淨值個人與工作室</p>
+<p class="text-xs text-on-surface-variant">個人稅務籌劃與執行，確保私人資產隱私與稅效率。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5-Step Process -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-primary font-headline mb-4">服務導入流程</h2>
+<p class="text-on-surface-variant">嚴謹的對接程序，是精確帳務的開始。</p>
+</div>
+<div class="relative flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -z-10"></div>
+<!-- Step 1 -->
+<div class="flex-1 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary flex items-center justify-center font-bold rounded-lg mb-6 shadow-lg">1</div>
+<h4 class="font-bold mb-2">初步諮詢</h4>
+<p class="text-sm text-on-surface-variant">了解企業規模<br/>與特殊需求</p>
+</div>
+<!-- Step 2 -->
+<div class="flex-1 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary flex items-center justify-center font-bold rounded-lg mb-6 shadow-lg">2</div>
+<h4 class="font-bold mb-2">現狀診斷</h4>
+<p class="text-sm text-on-surface-variant">檢視過往帳務<br/>與稅務健康度</p>
+</div>
+<!-- Step 3 -->
+<div class="flex-1 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary flex items-center justify-center font-bold rounded-lg mb-6 shadow-lg">3</div>
+<h4 class="font-bold mb-2">方案確認</h4>
+<p class="text-sm text-on-surface-variant">簽署委託合約<br/>與交接清單</p>
+</div>
+<!-- Step 4 -->
+<div class="flex-1 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary flex items-center justify-center font-bold rounded-lg mb-6 shadow-lg">4</div>
+<h4 class="font-bold mb-2">系統導入</h4>
+<p class="text-sm text-on-surface-variant">建置數位帳務<br/>與憑證流</p>
+</div>
+<!-- Step 5 -->
+<div class="flex-1 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary flex items-center justify-center font-bold rounded-lg mb-6 shadow-lg">5</div>
+<h4 class="font-bold mb-2">正式運行</h4>
+<p class="text-sm text-on-surface-variant">定期報表產出<br/>與申報執行</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Tiers -->
+<section class="py-24 px-8 bg-surface-container">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-3xl font-bold text-primary font-headline mb-2">透明定價</h2>
+<div class="w-12 h-[1px] bg-secondary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Standard -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col">
+<h3 class="text-xl font-bold text-primary mb-2">標準帳務方案</h3>
+<p class="text-sm text-on-surface-variant mb-6">適合新創公司與微型工作室</p>
+<div class="text-3xl font-black text-primary mb-8 font-headline">NT$ 3,000<span class="text-sm font-normal text-on-surface-variant"> / 月起</span></div>
+<ul class="flex-grow space-y-4 mb-10 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span> 每期營業稅申報</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span> 年度營所稅結算申報</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span> 扣繳憑單申報</li>
+<li class="flex items-center gap-2 text-on-surface-variant/50"><span class="material-symbols-outlined text-lg" data-icon="close">close</span> 經營績效分析報告</li>
+</ul>
+<button class="w-full py-3 bg-surface-container-high text-primary font-bold hover:bg-primary hover:text-on-primary transition-all duration-300">立即預約諮詢</button>
+</div>
+<!-- Professional -->
+<div class="bg-primary text-on-primary p-8 rounded-lg shadow-2xl scale-105 flex flex-col z-10">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">專業增長方案</h3>
+<span class="bg-secondary px-2 py-1 text-[10px] uppercase font-bold tracking-widest text-on-secondary">Most Popular</span>
+</div>
+<p class="text-sm text-on-primary-container mb-6">適合穩定成長的中小企業</p>
+<div class="text-3xl font-black mb-8 font-headline">NT$ 6,500<span class="text-sm font-normal text-on-primary-container"> / 月起</span></div>
+<ul class="flex-grow space-y-4 mb-10 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary-container text-lg" data-icon="done_all">done_all</span> 包含標準方案所有內容</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary-container text-lg" data-icon="done_all">done_all</span> 季度財務分析座談</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary-container text-lg" data-icon="done_all">done_all</span> 勞健保事務協助</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary-container text-lg" data-icon="done_all">done_all</span> 年度稅務節稅規劃方案</li>
+</ul>
+<button class="w-full py-3 bg-secondary text-on-secondary font-bold hover:brightness-110 transition-all duration-300">聯繫專家導入</button>
+</div>
+<!-- Enterprise -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col">
+<h3 class="text-xl font-bold text-primary mb-2">集團與外資專案</h3>
+<p class="text-sm text-on-surface-variant mb-6">客製化合規與國際稅務</p>
+<div class="text-3xl font-black text-primary mb-8 font-headline">客製化報價</div>
+<ul class="flex-grow space-y-4 mb-10 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span> 跨國集團內部報表 (IFRS)</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span> 關係人交易申報</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span> 專屬資深會計師駐點諮詢</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span> 投審會/外匯局申報</li>
+</ul>
+<button class="w-full py-3 bg-surface-container-high text-primary font-bold hover:bg-primary hover:text-on-primary transition-all duration-300">洽談專案細節</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-primary font-headline mb-4">常見問題</h2>
+<p class="text-on-surface-variant">關於會計與稅務，您可能想知道...</p>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/10">
+<summary class="flex justify-between items-center font-bold text-primary cursor-pointer list-none">
+<span>更換會計事務所的流程會很複雜嗎？</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                            不復雜。我們提供「無痛銜接」服務。您只需取得前任事務所的「總分類帳」與「憑證檔案」，剩下的交接與對口工作由我們的專業團隊代勞。
+                        </p>
+</details>
+<details class="group bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/10">
+<summary class="flex justify-between items-center font-bold text-primary cursor-pointer list-none">
+<span>你們的帳務處理是純人力的還是有使用數位工具？</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                            我們採用先進的數位帳務系統，並結合 OCR 光學識別技術處理憑證。這不僅能大幅降低人為錯誤，還能讓客戶透過專屬 App 隨時查看即時財務狀況。
+                        </p>
+</details>
+<details class="group bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/10">
+<summary class="flex justify-between items-center font-bold text-primary cursor-pointer list-none">
+<span>新創公司何時應該開始找會計師？</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                            建議在公司「成立登記前」就進行諮詢。合適的股權架構與稅籍規劃能為後續營運省去大量麻煩。即便已經開始營運，也應儘早將帳務正規化。
+                        </p>
+</details>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-8 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary opacity-[0.02]"></div>
+<div class="max-w-7xl mx-auto text-center relative z-10">
+<h2 class="text-4xl md:text-5xl font-black text-primary mb-8 font-headline">準備好優化您的企業財務？</h2>
+<p class="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">與我們的資深會計師進行一場 30 分鐘的免費診斷，為您的企業量身打造最合適的服務方案。</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-[#F5A623] text-primary px-10 py-4 font-bold rounded-lg shadow-xl hover:brightness-110 transition-all">預約專家門診</button>
+<button class="bg-primary text-on-primary px-10 py-4 font-bold rounded-lg shadow-xl hover:opacity-90 transition-all">索取報價單</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1F3A2E] text-[#fcf9f4] font-['Inter'] text-sm tracking-wide w-full py-16 px-8 border-t border-[#082419]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-xl font-bold text-[#fcf9f4] mb-6 font-['Noto_Sans_TC']">Cicpafirm</div>
+<p class="text-[#fcf9f4]/60 leading-relaxed">
+                    提供卓越的專業會計、審計、稅務及商務諮詢服務。以誠信為本，為企業與個人的財務健康護航。
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white mb-2 font-['Noto_Sans_TC']">服務項目</h4>
+<a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors" href="#">工商登記</a>
+<a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors" href="#">帳務處理</a>
+<a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors" href="#">審計簽證</a>
+<a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors" href="#">稅務規劃</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white mb-2 font-['Noto_Sans_TC']">探索更多</h4>
+<a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors" href="#">關於我們</a>
+<a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors" href="#">專業觀點</a>
+<a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors" href="#">常見問題</a>
+<a class="text-[#fcf9f4]/60 hover:text-[#F5A623] transition-colors" href="#">聯絡我們</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white mb-2 font-['Noto_Sans_TC']">聯絡資訊</h4>
+<p class="text-[#fcf9f4]/60">台北市大安區敦化南路二段 XXX 號</p>
+<p class="text-[#fcf9f4]/60">02-27XX-XXXX</p>
+<p class="text-[#fcf9f4]/60">service@cicpafirm.tw</p>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-[#fcf9f4]/60 cursor-pointer hover:text-white" data-icon="language">language</span>
+<span class="material-symbols-outlined text-[#fcf9f4]/60 cursor-pointer hover:text-white" data-icon="mail">mail</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-[#fcf9f4]/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[#fcf9f4]/40 text-xs">
+<p>© 2024 Cicpafirm. All rights reserved. Precision in Finance.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">法律條款</a>
+<a class="hover:text-white" href="#">隱私政策</a>
+</div>
+</div>
+</footer>
+</body></html>

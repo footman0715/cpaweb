@@ -1,0 +1,73 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  breadcrumb?: Array<{ name: string; url: string }>;
+  faq?: Array<{ q: string; a: string }>;
+}
+
+const { breadcrumb, faq } = Astro.props;
+
+const accountingService = {
+  '@context': 'https://schema.org',
+  '@type': 'AccountingService',
+  name: site.name,
+  alternateName: site.brand,
+  url: site.url,
+  logo: `${site.url}/logo.svg`,
+  image: `${site.url}/og-image.jpg`,
+  telephone: site.telE164,
+  faxNumber: site.faxE164,
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '東山路一段156-6號6樓之1',
+    addressLocality: site.district,
+    addressRegion: '台中市',
+    postalCode: site.postalCode,
+    addressCountry: 'TW',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: '台中市' },
+    { '@type': 'Country', name: '台灣' },
+  ],
+  priceRange: '$$',
+  foundingDate: `${site.founded}`,
+};
+
+const breadcrumbList = breadcrumb && {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumb.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.name,
+    item: item.url,
+  })),
+};
+
+const faqPage = faq && {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(accountingService)} />
+{breadcrumbList && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList)} />}
+{faqPage && <script type="application/ld+json" set:html={JSON.stringify(faqPage)} />}

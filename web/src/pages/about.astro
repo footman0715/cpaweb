@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const yearsActive = new Date().getFullYear() - site.founded;
+
+const values = [
+  {
+    num: '01',
+    title: '準確勝於速度',
+    body: '帳務錯誤帶來的修正成本遠超過當下搶快省下的時間。我們寧可慢一天,也要交給您一份正確的報表。',
+  },
+  {
+    num: '02',
+    title: '解釋勝於代辦',
+    body: '您應該看得懂自己公司的財報。我們在每份報表旁留有解釋欄位,讓您做決策時不依賴猜測。',
+  },
+  {
+    num: '03',
+    title: '長期勝於交易',
+    body: '我們的客戶平均合作超過 8 年。不是因為合約綁住,而是因為相信是雙向累積出來的。',
+  },
+];
+
+const milestones = [
+  { year: '2005', text: '奇承聯合會計師事務所於台中創立,初始會計師 2 名,主攻中小企業記帳與報稅。' },
+  { year: '2010', text: '新增財務簽證與稅務簽證業務,服務公司數突破 100 家。' },
+  { year: '2015', text: '導入全面電子化帳務系統,支援客戶遠距憑證傳送與線上對帳。' },
+  { year: '2018', text: '新增香港投資移民設立服務,服務跨境客戶。' },
+  { year: '2022', text: '執業會計師團隊擴編至 4 人,客戶數突破 500 家。' },
+  { year: '2025', text: '事務所遷址至台中市北屯區東山路,擴大辦公空間。' },
+];
+
+const team = [
+  { initials: '王 一', role: '主持會計師', license: '執業字號 · 待補', skills: ['中小企業稅務', '財務簽證', '併購重組'] },
+  { initials: '王 二', role: '合夥會計師', license: '執業字號 · 待補', skills: ['稅務規劃', '融資簽證'] },
+  { initials: '王 三', role: '執業會計師', license: '執業字號 · 待補', skills: ['記帳實務', '工商登記'] },
+  { initials: '王 四', role: '執業會計師', license: '執業字號 · 待補', skills: ['個人稅務', '遺贈稅'] },
+];
+---
+
+<BaseLayout
+  title={`關於奇承 — ${yearsActive}+ 年台中會計師事務所 | ${site.name}`}
+  description="奇承聯合會計師事務所成立於 2005 年,位於台中北屯,專注服務中小企業、新創與家族企業,提供記帳、稅務、財簽、工商登記一站式服務。"
+  breadcrumb={[
+    { name: '首頁', url: site.url },
+    { name: '關於我們', url: `${site.url}/about/` },
+  ]}
+>
+  <section class="max-w-[1200px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <nav class="text-xs text-[color:var(--color-text-muted)] mb-8">
+      <a href="/" class="hover:text-[color:var(--color-ink)]">首頁</a> /
+      <span class="text-[color:var(--color-ink)]">關於我們</span>
+    </nav>
+
+    <p class="eyebrow mb-4">ABOUT · 關於奇承</p>
+    <h1 class="text-4xl md:text-6xl font-black text-[color:var(--color-ink)] tracking-tight leading-[1.15] max-w-[900px]">
+      二十年,我們只做一件事 — 幫台中的中小企業把帳與稅管好。
+    </h1>
+    <p class="mt-10 text-lg text-[color:var(--color-text-muted)] leading-[1.85] max-w-[720px]">
+      奇承聯合會計師事務所成立於 {site.founded} 年,總部在台中北屯。成立以來,我們專注服務本地中小企業、新創與家族企業。我們相信會計師的價值不在「年底把報表做出來」,而在「讓您的每一筆決策都有可靠的財務資訊撐腰」。
+    </p>
+  </section>
+
+  <section class="bg-[color:var(--color-canvas-dim)] py-24 lg:py-32">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+      <p class="eyebrow mb-4">OUR VALUES</p>
+      <h2 class="text-4xl md:text-5xl font-black text-[color:var(--color-ink)] tracking-tight">
+        我們相信的事
+      </h2>
+
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+        {values.map((v) => (
+          <div>
+            <span class="font-tabular text-5xl font-light text-[color:var(--color-gold)]">{v.num}</span>
+            <h3 class="mt-6 text-2xl font-black text-[color:var(--color-ink)]">{v.title}</h3>
+            <p class="mt-4 text-[15px] leading-[1.85] text-[color:var(--color-text-muted)]">{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-[1200px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <p class="eyebrow mb-4">MILESTONES</p>
+    <h2 class="text-4xl md:text-5xl font-black text-[color:var(--color-ink)] tracking-tight">
+      一路走來
+    </h2>
+
+    <ol class="mt-14 relative border-l border-[color:var(--color-hairline)] pl-8 space-y-10">
+      {milestones.map((m) => (
+        <li class="relative">
+          <span class="absolute -left-[38px] top-2 w-3 h-3 rounded-full bg-[color:var(--color-gold)]" aria-hidden="true"></span>
+          <time class="font-tabular text-2xl font-light text-[color:var(--color-ink)]">{m.year}</time>
+          <p class="mt-2 text-[color:var(--color-text-muted)] leading-[1.8] max-w-[720px]">{m.text}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="bg-[color:var(--color-canvas-dim)] py-24 lg:py-32">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+      <p class="eyebrow mb-4">OUR CPAs</p>
+      <h2 class="text-4xl md:text-5xl font-black text-[color:var(--color-ink)] tracking-tight">
+        認識我們的會計師
+      </h2>
+      <p class="mt-4 text-sm text-[color:var(--color-text-muted)]">
+        * 以下為姓名與執業字號待補佔位內容,實際資料由事務所提供後更新。
+      </p>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {team.map((p) => (
+          <div class="border border-[color:var(--color-hairline)] bg-[color:var(--color-canvas)] rounded-[4px] p-8 flex gap-6">
+            <div class="w-24 h-24 flex-shrink-0 bg-gradient-to-br from-[color:var(--color-gold)]/20 to-[color:var(--color-gold)]/5 border border-[color:var(--color-hairline)] rounded-[4px] flex items-center justify-center text-2xl font-black text-[color:var(--color-ink)]/40">
+              {p.initials}
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-black text-[color:var(--color-ink)]">{p.initials} 會計師</h3>
+              <p class="text-xs font-tabular text-[color:var(--color-text-muted)] mt-1">{p.license}</p>
+              <p class="text-sm text-[color:var(--color-gold)] mt-1 font-semibold">{p.role}</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                {p.skills.map((s) => (
+                  <span class="text-xs px-2.5 py-1 rounded-[4px] border border-[color:var(--color-hairline)] text-[color:var(--color-text-muted)]">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

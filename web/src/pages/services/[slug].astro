@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { services, site } from '../../data/site';
+
+export function getStaticPaths() {
+  return services.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
+}
+
+const { service } = Astro.props;
+---
+
+<BaseLayout
+  title={`${service.title} — 台中會計師專業服務 | ${site.name}`}
+  description={service.short}
+  breadcrumb={[
+    { name: '首頁', url: site.url },
+    { name: '服務項目', url: `${site.url}/services/` },
+    { name: service.title, url: `${site.url}/services/${service.slug}/` },
+  ]}
+>
+  <section class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <nav class="text-xs text-[color:var(--color-text-muted)] mb-8">
+      <a href="/" class="hover:text-[color:var(--color-ink)]">首頁</a> /
+      <a href="/services/" class="hover:text-[color:var(--color-ink)]">服務項目</a> /
+      <span class="text-[color:var(--color-ink)]">{service.title}</span>
+    </nav>
+
+    <p class="eyebrow mb-4">SERVICE {service.num}</p>
+    <h1 class="text-5xl md:text-7xl font-black text-[color:var(--color-ink)] tracking-tight">
+      {service.title}
+    </h1>
+    <p class="mt-8 text-xl text-[color:var(--color-text-muted)] max-w-[720px] leading-relaxed">
+      {service.short}
+    </p>
+
+    <div class="mt-12 flex flex-wrap gap-4">
+      <a
+        href="/contact/"
+        class="inline-flex items-center gap-2 bg-[color:var(--color-signal)] text-[color:var(--color-ink-deep)] font-bold px-7 py-3.5 rounded-[6px] hover:opacity-90 transition-opacity"
+      >
+        免費諮詢 →
+      </a>
+      <a
+        href="/services/"
+        class="inline-flex items-center gap-2 border border-[color:var(--color-ink)] text-[color:var(--color-ink)] font-medium px-7 py-3.5 rounded-[6px] hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-canvas)] transition-colors"
+      >
+        查看所有服務
+      </a>
+    </div>
+
+    <hr class="hairline mt-20" />
+
+    <div class="mt-16 prose prose-neutral max-w-[720px]">
+      <p class="text-[color:var(--color-text-muted)] leading-[1.85]">
+        此頁為服務落地頁骨架。後續將依照 <code>.stitch/stitch-prompt-service-detail.md</code> 規格填入:服務範疇、合作流程、收費說明、相關 FAQ、HowTo Schema 等內容。
+      </p>
+    </div>
+  </section>
+</BaseLayout>

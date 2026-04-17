@@ -1,0 +1,84 @@
+---
+import { services } from '../../data/site';
+
+// Asymmetric layout: row1 = [flagship=5 cols, 7 cols], row2 = [7 cols, 5 cols]
+const layout = [
+  { span: 'md:col-span-5', tall: true },
+  { span: 'md:col-span-7', tall: false },
+  { span: 'md:col-span-7', tall: false },
+  { span: 'md:col-span-5', tall: false },
+];
+---
+
+<section class="bg-[color:var(--color-canvas-dim)] py-24 lg:py-32">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <p class="eyebrow mb-4">SERVICES · 服務項目</p>
+    <h2 class="text-4xl md:text-5xl font-black text-[color:var(--color-ink)] tracking-tight">
+      四大核心服務
+    </h2>
+
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-12 gap-6">
+      {services.map((s, i) => {
+        const l = layout[i];
+        const isFlagship = s.flagship;
+        return (
+          <a
+            href={`/services/${s.slug}/`}
+            class:list={[
+              l.span,
+              'group relative rounded-[4px] p-10 lg:p-12 border transition-shadow',
+              isFlagship
+                ? 'bg-[color:var(--color-ink)] text-[color:var(--color-canvas)] border-[color:var(--color-ink)] hover:shadow-[0_8px_24px_rgba(31,58,46,0.15)]'
+                : 'bg-[color:var(--color-canvas)] border-[color:var(--color-hairline)] hover:shadow-[0_8px_24px_rgba(31,58,46,0.06)]',
+              l.tall ? 'min-h-[320px]' : 'min-h-[260px]',
+            ]}
+          >
+            <span
+              class:list={[
+                'font-tabular text-sm tracking-widest',
+                isFlagship ? 'text-[color:var(--color-gold-soft)]' : 'text-[color:var(--color-gold)]',
+              ]}
+            >
+              {s.num}
+            </span>
+
+            <h3 class:list={[
+              'mt-6 text-2xl md:text-[32px] font-black tracking-tight',
+              isFlagship ? 'text-[color:var(--color-canvas)]' : 'text-[color:var(--color-ink)]',
+            ]}>
+              {s.title}
+            </h3>
+
+            <p class:list={[
+              'mt-4 text-[15px] leading-relaxed max-w-[440px]',
+              isFlagship ? 'text-[color:var(--color-canvas)]/80' : 'text-[color:var(--color-text-muted)]',
+            ]}>
+              {s.short}
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              {s.keywords.map((k) => (
+                <span class:list={[
+                  'text-xs px-3 py-1 rounded-[4px] border',
+                  isFlagship
+                    ? 'border-[color:var(--color-canvas)]/30 text-[color:var(--color-canvas)]/80'
+                    : 'border-[color:var(--color-hairline)] text-[color:var(--color-text-muted)]',
+                ]}>
+                  {k}
+                </span>
+              ))}
+            </div>
+
+            <span
+              class:list={[
+                'absolute bottom-8 right-8 text-xl transition-transform group-hover:translate-x-1',
+                isFlagship ? 'text-[color:var(--color-gold-soft)]' : 'text-[color:var(--color-ink)]',
+              ]}
+              aria-hidden="true"
+            >→</span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

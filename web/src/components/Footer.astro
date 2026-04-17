@@ -1,0 +1,74 @@
+---
+import { site, services } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[color:var(--color-canvas)] border-t border-[color:var(--color-hairline)]">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex flex-col leading-tight mb-4">
+          <span class="text-base font-black text-[color:var(--color-ink)]">{site.name}</span>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-[color:var(--color-text-muted)] mt-1">
+            {site.brand}
+          </span>
+        </div>
+        <p class="text-sm text-[color:var(--color-text-muted)] leading-relaxed max-w-[240px]">
+          台中北屯的會計師事務所,專業服務中小企業超過 20 年。
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold mb-4">
+          服務項目
+        </h4>
+        <ul class="space-y-2 text-sm text-[color:var(--color-ink)]">
+          {services.map((s) => (
+            <li>
+              <a href={`/services/${s.slug}/`} class="hover:text-[color:var(--color-ink-deep)]">
+                {s.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold mb-4">
+          關於
+        </h4>
+        <ul class="space-y-2 text-sm text-[color:var(--color-ink)]">
+          <li><a href="/about/" class="hover:text-[color:var(--color-ink-deep)]">關於我們</a></li>
+          <li><a href="/tax-news/" class="hover:text-[color:var(--color-ink-deep)]">稅務新聞</a></li>
+          <li><a href="/faq/" class="hover:text-[color:var(--color-ink-deep)]">常見問題</a></li>
+          <li><a href="/downloads/" class="hover:text-[color:var(--color-ink-deep)]">下載專區</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold mb-4">
+          聯絡
+        </h4>
+        <ul class="space-y-2 text-sm text-[color:var(--color-ink)]">
+          <li><span class="font-tabular text-[color:var(--color-text-muted)]">TEL</span> {site.tel}</li>
+          <li><span class="font-tabular text-[color:var(--color-text-muted)]">FAX</span> {site.fax}</li>
+          <li><a href={`mailto:${site.email}`} class="hover:text-[color:var(--color-ink-deep)]">{site.email}</a></li>
+          <li class="text-[color:var(--color-text-muted)] text-xs leading-relaxed pt-1">
+            {site.address}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="hairline my-10" />
+
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-[color:var(--color-text-muted)]">
+      <span>© {year} {site.name} · All rights reserved</span>
+      <div class="flex gap-5">
+        <a href="/privacy/" class="hover:text-[color:var(--color-ink)]">隱私權政策</a>
+        <a href="/terms/" class="hover:text-[color:var(--color-ink)]">使用條款</a>
+      </div>
+    </div>
+  </div>
+</footer>

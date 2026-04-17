@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { services, site } from '../../data/site';
+---
+
+<BaseLayout
+  title={`服務項目 — 台中會計師事務所 | ${site.name}`}
+  description="奇承聯合會計師事務所提供四大核心服務:會計稅務、工商登記、會計師簽證及審計、諮詢服務。台中中小企業的一站式會計稅務夥伴。"
+  breadcrumb={[
+    { name: '首頁', url: site.url },
+    { name: '服務項目', url: `${site.url}/services/` },
+  ]}
+>
+  <section class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <nav class="text-xs text-[color:var(--color-text-muted)] mb-8">
+      <a href="/" class="hover:text-[color:var(--color-ink)]">首頁</a> /
+      <span class="text-[color:var(--color-ink)]">服務項目</span>
+    </nav>
+
+    <p class="eyebrow mb-4">SERVICES</p>
+    <h1 class="text-5xl md:text-7xl font-black text-[color:var(--color-ink)] tracking-tight">
+      四大核心服務
+    </h1>
+    <p class="mt-6 text-lg text-[color:var(--color-text-muted)] max-w-[680px] leading-relaxed">
+      從每月記帳到年度簽證,奇承聯合會計師事務所整合四條服務線,為台中中小企業提供一站式會計稅務外包。
+    </p>
+
+    <hr class="hairline mt-16" />
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {services.map((s) => (
+        <a
+          href={`/services/${s.slug}/`}
+          class="group border border-[color:var(--color-hairline)] rounded-[4px] p-10 bg-[color:var(--color-canvas)] hover:shadow-[0_8px_24px_rgba(31,58,46,0.06)] transition-shadow"
+        >
+          <span class="font-tabular text-sm tracking-widest text-[color:var(--color-gold)]">
+            {s.num}
+          </span>
+          <h2 class="mt-4 text-3xl font-black text-[color:var(--color-ink)] tracking-tight">
+            {s.title}
+          </h2>
+          <p class="mt-3 text-[15px] text-[color:var(--color-text-muted)] leading-relaxed">
+            {s.short}
+          </p>
+          <span class="inline-block mt-6 text-[color:var(--color-ink)] group-hover:translate-x-1 transition-transform">
+            了解更多 →
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

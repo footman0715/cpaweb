@@ -1,0 +1,49 @@
+---
+import { featuredFaq } from '../../data/site';
+---
+
+<section class="bg-[color:var(--color-canvas)] py-24 lg:py-32">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-20">
+      <div>
+        <p class="eyebrow mb-4">FAQ · 常見問題</p>
+        <h2 class="text-4xl md:text-5xl font-black text-[color:var(--color-ink)] tracking-tight">
+          客戶最常問
+        </h2>
+        <p class="mt-6 text-base text-[color:var(--color-text-muted)] leading-[1.8] max-w-[420px]">
+          下列是我們每個月會被問到的問題。如您的情況更特殊,歡迎預約免費初談,我們會依照您的事業階段給予具體建議。
+        </p>
+        <a
+          href="/faq/"
+          class="inline-block mt-6 text-sm text-[color:var(--color-ink)] hover:text-[color:var(--color-ink-deep)] border-b border-[color:var(--color-gold)]/0 hover:border-[color:var(--color-gold)] transition-colors pb-0.5"
+        >
+          查看完整 FAQ →
+        </a>
+      </div>
+
+      <div class="border-t border-[color:var(--color-hairline)]">
+        {featuredFaq.map((item, i) => (
+          <details class="group border-b border-[color:var(--color-hairline)]" open={i === 0}>
+            <summary class="flex items-start justify-between gap-4 py-6 cursor-pointer list-none marker:hidden">
+              <h3 class="text-base md:text-lg font-bold text-[color:var(--color-ink)] leading-snug">
+                {item.q}
+              </h3>
+              <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-[color:var(--color-gold)] text-xl transition-transform group-open:rotate-45" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <div class="pb-6 pr-10 text-[15px] leading-[1.85] text-[color:var(--color-text-muted)]">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

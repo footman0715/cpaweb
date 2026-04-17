@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const mapQuery = encodeURIComponent(site.address);
+---
+
+<BaseLayout
+  title={`聯絡我們 — 台中北屯會計師事務所 | ${site.name}`}
+  description="奇承聯合會計師事務所位於台中市北屯區東山路。歡迎來電 04-2435-1850 預約免費初談,或填寫線上表單。"
+  breadcrumb={[
+    { name: '首頁', url: site.url },
+    { name: '聯絡我們', url: `${site.url}/contact/` },
+  ]}
+>
+  <section class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <nav class="text-xs text-[color:var(--color-text-muted)] mb-8">
+      <a href="/" class="hover:text-[color:var(--color-ink)]">首頁</a> /
+      <span class="text-[color:var(--color-ink)]">聯絡我們</span>
+    </nav>
+
+    <p class="eyebrow mb-4">CONTACT</p>
+    <h1 class="text-4xl md:text-6xl font-black text-[color:var(--color-ink)] tracking-tight">
+      與我們談談您的需求
+    </h1>
+    <p class="mt-6 text-lg text-[color:var(--color-text-muted)] max-w-[680px] leading-relaxed">
+      免費初談,依您的事業階段提供最適合的服務建議。
+    </p>
+
+    <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      <div>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
+          <div>
+            <dt class="text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold mb-3">地址</dt>
+            <dd class="text-[color:var(--color-ink)] leading-relaxed">{site.address}</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold mb-3">營業時間</dt>
+            <dd class="text-[color:var(--color-ink)]">{site.hours}</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold mb-3">電話</dt>
+            <dd class="font-tabular text-[color:var(--color-ink)]">
+              <a href={`tel:${site.telE164}`}>{site.tel}</a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold mb-3">傳真</dt>
+            <dd class="font-tabular text-[color:var(--color-ink)]">{site.fax}</dd>
+          </div>
+          <div class="sm:col-span-2">
+            <dt class="text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] font-semibold mb-3">Email</dt>
+            <dd>
+              <a href={`mailto:${site.email}`} class="text-[color:var(--color-ink)] hover:text-[color:var(--color-ink-deep)]">
+                {site.email}
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="hairline my-10" />
+
+        <h2 class="text-lg font-bold text-[color:var(--color-ink)] mb-4">線上諮詢</h2>
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="姓名" required class="w-full px-4 py-3 border border-[color:var(--color-hairline)] rounded-[4px] bg-[color:var(--color-canvas)] focus:outline-none focus:border-[color:var(--color-ink)]" />
+            <input type="text" placeholder="公司(選填)" class="w-full px-4 py-3 border border-[color:var(--color-hairline)] rounded-[4px] bg-[color:var(--color-canvas)] focus:outline-none focus:border-[color:var(--color-ink)]" />
+          </div>
+          <input type="email" placeholder="Email" required class="w-full px-4 py-3 border border-[color:var(--color-hairline)] rounded-[4px] bg-[color:var(--color-canvas)] focus:outline-none focus:border-[color:var(--color-ink)]" />
+          <input type="tel" placeholder="聯絡電話" class="w-full px-4 py-3 border border-[color:var(--color-hairline)] rounded-[4px] bg-[color:var(--color-canvas)] focus:outline-none focus:border-[color:var(--color-ink)]" />
+          <textarea placeholder="需求說明" rows="5" class="w-full px-4 py-3 border border-[color:var(--color-hairline)] rounded-[4px] bg-[color:var(--color-canvas)] focus:outline-none focus:border-[color:var(--color-ink)]"></textarea>
+          <button type="submit" class="bg-[color:var(--color-signal)] text-[color:var(--color-ink-deep)] font-bold px-7 py-3.5 rounded-[6px] hover:opacity-90">
+            送出諮詢
+          </button>
+        </form>
+      </div>
+
+      <div class="relative h-[500px] rounded-[4px] overflow-hidden border border-[color:var(--color-hairline)]">
+        <iframe
+          src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="奇承聯合會計師事務所地圖"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+
+.claude/
+.stitch/
+
+*.zip
+
+web/node_modules/
+web/.astro/
+web/dist/
+web/.vercel/
+
+web/.env
+web/.env.*
+!web/.env.example

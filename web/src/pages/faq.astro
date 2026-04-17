@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { featuredFaq, site } from '../data/site';
+---
+
+<BaseLayout
+  title={`常見問題 — 會計、稅務、設立公司的問題一次看 | ${site.name}`}
+  description="奇承聯合會計師事務所整理客戶最常問的問題:公司設立文件、營業稅申報、財務簽證、記帳收費、個人綜所稅等。"
+  breadcrumb={[
+    { name: '首頁', url: site.url },
+    { name: '常見問題', url: `${site.url}/faq/` },
+  ]}
+  faq={[...featuredFaq]}
+>
+  <section class="max-w-[960px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <nav class="text-xs text-[color:var(--color-text-muted)] mb-8">
+      <a href="/" class="hover:text-[color:var(--color-ink)]">首頁</a> /
+      <span class="text-[color:var(--color-ink)]">常見問題</span>
+    </nav>
+
+    <p class="eyebrow mb-4">FAQ · 常見問題</p>
+    <h1 class="text-4xl md:text-6xl font-black text-[color:var(--color-ink)] tracking-tight leading-[1.15]">
+      關於會計、稅務、設立公司的問題,我們都整理在這裡
+    </h1>
+    <p class="mt-8 text-lg text-[color:var(--color-text-muted)] max-w-[720px] leading-relaxed">
+      這頁集合了客戶最常問我們的問題。如果您想問的不在這裡,歡迎直接來信、來電,或預約免費初談。
+    </p>
+
+    <hr class="hairline mt-16" />
+
+    <div class="mt-12 border-t border-[color:var(--color-hairline)]">
+      {featuredFaq.map((item, i) => (
+        <details class="group border-b border-[color:var(--color-hairline)]" open={i === 0}>
+          <summary class="flex items-start justify-between gap-4 py-6 cursor-pointer list-none">
+            <h3 class="text-lg md:text-xl font-bold text-[color:var(--color-ink)] leading-snug">
+              {item.q}
+            </h3>
+            <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-[color:var(--color-gold)] text-2xl transition-transform group-open:rotate-45" aria-hidden="true">
+              +
+            </span>
+          </summary>
+          <div class="pb-8 pr-10 text-[15px] leading-[1.85] text-[color:var(--color-text-muted)]">
+            {item.a}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-20 p-10 bg-[color:var(--color-canvas-dim)] rounded-[4px] border border-[color:var(--color-hairline)] text-center">
+      <h2 class="text-2xl font-black text-[color:var(--color-ink)]">沒找到您的問題?</h2>
+      <p class="mt-4 text-[color:var(--color-text-muted)]">
+        每個案件都有自己的細節,歡迎直接告訴我們您遇到的狀況。
+      </p>
+      <div class="mt-8 flex justify-center gap-4 flex-wrap">
+        <a href="/contact/" class="bg-[color:var(--color-signal)] text-[color:var(--color-ink-deep)] font-bold px-6 py-3 rounded-[6px] hover:opacity-90">
+          預約免費初談 →
+        </a>
+        <a href={`tel:${site.telE164}`} class="text-sm self-center text-[color:var(--color-ink)]">
+          或直撥 {site.tel}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
