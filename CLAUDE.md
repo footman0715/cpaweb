@@ -27,7 +27,7 @@
 | 內容 | MDX (@astrojs/mdx)，未來可接 Sanity / Strapi |
 | Sitemap | @astrojs/sitemap 自動產生 |
 | 部署 | Vercel（透過 GitHub 自動部署，Root Directory = `web/`） |
-| Node | >=22.12 |
+| Node | 22.x（建議本機以 `22.12.0` 起跑，避免和部署環境飄移） |
 
 ## 目錄結構
 
